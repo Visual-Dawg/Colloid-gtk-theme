@@ -20,6 +20,10 @@
   @return unquote("@#{$c}");
 }
 
+@function translucent($color, $alpha) {
+  @return rgba($color, $alpha);
+}
+
 @function on($color, $state: 'primary') {
   // Allow 'light' or 'dark' to $color
   @if ($color == 'light') { $color: $white; }
@@ -131,10 +135,10 @@ $scrim:                                 background(f);
 $scrim-alt:                             background(g);
 $scrim-inverse:                         rgba($white, 0.1);
 $titlebar:                              if($topbar == 'dark', background(f), background(c));
-$titlebar-backdrop:                     if($topbar == 'dark', transparentize(background(g),$opac ), transparentize( background(b),$opac ));
+$titlebar-backdrop:                     if($topbar == 'dark', translucent(background(g), $headerbar-opacity), translucent(background(b), $headerbar-opacity));
 $titlebar-primary:                      if($topbar == 'dark' and $theme == 'grey' and $variant == 'light', lighten($primary, 15%), $primary);
 $sidebar:                               if($topbar == 'dark' and $variant == 'light', $titlebar, $base-alt);
-$sidebar-backdrop:                      if($topbar == 'dark' and $variant == 'light', transparentize($titlebar-backdrop,$opac), transparentize($background,$opac));
+$sidebar-backdrop:                      if($topbar == 'dark' and $variant == 'light', translucent($titlebar, $sidebar-opacity), translucent($background, $sidebar-opacity));
 $popover:                               if($variant == 'light', background(a), background(g));
 $panel-solid:                           if($topbar == 'dark', background(e), background(c)); // for Unity panel which doesn't allow translucent colors
 $panel:                                 rgba($panel-solid, $panel_opacity);

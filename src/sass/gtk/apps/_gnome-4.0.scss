@@ -15,7 +15,7 @@
     margin: $space-size;
     border-style: none;
     border-radius: $corner-radius;
-    background-color: transparentize($primary,$opac);
+    background-color: translucent($primary, $accent-surface-opacity);
     color: on($primary);
     box-shadow: $shadow-z3;
 
@@ -50,7 +50,7 @@
 }
 
 #NautilusPathBar {
-  background-color: transparentize($titlebar-fill,$opac);
+  background-color: translucent($titlebar-fill, $headerbar-opacity);
   border-radius: $corner-radius;
   margin: $space-size 0;
 

@@ -37,5 +37,11 @@ $float: 'false';
 // Gnome-Shell version
 $gnome_version: 'default';
 
-// added hacked opacity
-$opac: 0.5;
+// Personal transparency policy
+// Values are literal alpha: 1.0 = opaque, 0.0 = invisible.
+$window-opacity: 0.55;
+$view-opacity: 0.62;
+$headerbar-opacity: 0.72;
+$sidebar-opacity: 0.58;
+$text-surface-opacity: 0.82;
+$accent-surface-opacity: 0.55;

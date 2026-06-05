@@ -119,7 +119,7 @@ StScrollBar {
   }
 
   StBin#trough {
-    background-color: transparentize($base, $opac);
+    background-color: translucent($base, $view-opacity);
     border-radius: $circular-radius;
   }
 

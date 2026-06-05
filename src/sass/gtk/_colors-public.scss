@@ -15,11 +15,11 @@ text color for entries, views and content in general */
 
 /*
 widget base background color */
-@define-color theme_bg_color #{"" + transparentize($background,$opac)};
+@define-color theme_bg_color #{"" + translucent($background, $window-opacity)};
 
 /*
 text widgets and the like base background color */
-@define-color theme_base_color #{"" + transparentize($base,$opac)};
+@define-color theme_base_color #{"" + translucent($base, $view-opacity)};
 
 /*
 base background color of selections */

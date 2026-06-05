@@ -35,11 +35,11 @@
 
 @if $colorscheme != 'default' or $blackness == 'true' or $colortype == 'fixed' {
 // Window
-@define-color window_bg_color #{transparentize($background,$opac)};
+@define-color window_bg_color #{translucent($background, $window-opacity)};
 @define-color window_fg_color #{$text};
 
 // Views - e.g. text view or tree view
-@define-color view_bg_color #{transparentize($base,$opac)};
+@define-color view_bg_color #{translucent($base, $view-opacity)};
 @define-color view_fg_color #{$text};
 
 // Header bar, search bar, tab bar

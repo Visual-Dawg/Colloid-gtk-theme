@@ -90,7 +90,7 @@
  * Base States *
  ***************/
 .background {
-  background-color: transparentize($background,$opac);
+  background-color: translucent($background, $window-opacity);
   color: $text;
 
   &.csd { // Set csd windows botttom border radius
@@ -105,7 +105,7 @@
 *:disabled { -gtk-icon-effect: dim; }
 
 .gtkstyle-fallback {
-  background-color: transparentize($titlebar, $opac);
+  background-color: translucent($titlebar, $headerbar-opacity);
   color: $titlebar-text;
 
   &:hover {
@@ -130,7 +130,7 @@
 }
 
 .view {
-  background-color: transparentize($base,$opac);
+  background-color: translucent($base, $view-opacity);
   color: $text;
 
   &:hover { box-shadow: inset 0 0 0 9999px $overlay-hover; }
@@ -164,7 +164,7 @@ textview {
   // FIXME: we need to override background-color to ensure text rendering
 
   text {
-    background-color: transparentize($base,$opac);
+    background-color: translucent($base, $text-surface-opacity);
     selection { &:focus, & { @extend %selected_items_primary; }}
   }
 
@@ -403,7 +403,7 @@ entry {
 
 treeview entry {
   &.flat, & {
-    background-color: transparentize($base,$opac);
+    background-color: translucent($base, $view-opacity);
 
     &, &:focus {
       border-image: none;
@@ -1109,7 +1109,7 @@ searchbar > revealer > box {
 
 .titlebar {
   transition: all $duration $ease-out;
-  background-color: transparentize($titlebar,$opac);
+  background-color: translucent($titlebar, $headerbar-opacity);
   color: $titlebar-text;
   border-radius: $window-radius $window-radius 0 0;
 
@@ -1177,7 +1177,7 @@ searchbar > revealer > box {
     background-color: $primary;
 
     &:backdrop {
-      background-color: transparentize($primary,$opac );
+      background-color: translucent($primary, $accent-surface-opacity);
     }
   }
 
@@ -1580,7 +1580,7 @@ treeview.view {
 
       &:not(:focus):not(:hover):not(:active) { color: $text-secondary; }
 
-      &, &:disabled { background-color: transparentize($base, $opac); }
+      &, &:disabled { background-color: translucent($base, $view-opacity); }
 
       &:last-child { border-right-style: none; }
     }
@@ -1904,10 +1904,10 @@ popover.background {
 }
 
 notebook {
-  background-color: transparentize($base,$opac);
+  background-color: translucent($base, $view-opacity);
 
   frame > paned > & > header,
-  &.frame > header { background-color: transparentize($fill,$opac); }
+  &.frame > header { background-color: translucent($fill, $sidebar-opacity); }
 
   &.frame {
     border-radius: $modal-radius + $space-size;
